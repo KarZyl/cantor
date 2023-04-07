@@ -19,20 +19,12 @@ def home():
     data = pd.read_csv('exchange_rates.csv',sep=";", names = ['number', 'currency', 'code','bid','ask'])
     return render_template('index.html', currencies=data['currency'])
 
-@app.route('/', methods=['GET','POST'])
+@app.route('/', methods=['POST'])
 def calculate():
     data = pd.read_csv('exchange_rates.csv', sep=";", names = ['number', 'currency', 'code','bid','ask'])
     currency = request.form.get('currency')
-
-    n=0
-    for a in data['currency']:
-        if a == currency:
-            bid = float(data["bid"][n])
-            ask = float(data["ask"][n])
-        else:
-            pass
-        n=n+1
-        
+    found = data[data.eq(currency).any(axis=1)]
+    ask = float(found["ask"].values[0])
     amount = float(request.form.get('amount'))
     result = round(amount * ask, 2)
     return render_template('index.html', currency=currency, amount=amount, result=result)
