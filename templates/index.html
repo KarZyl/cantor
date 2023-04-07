@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style type="text/css"></style>
+  <title>Currency Converter</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">">
+</head>
+<body>
+    <h1>
+    <form action="/" method="post">
+        <label for="currency">Choose a currency:</label>
+        <select name="currency" id="currency">
+            {% for currency in currencies %}
+                 <option>{{ currency }}</option>
+            {% endfor%}
+        </select>
+        <br>
+        <label for="amount">Enter the amount:</label>
+        <input type="number" name="amount" id="amount">
+        <br>
+        <button type="submit">Convert</button>
+        
+    </form>
+</h1>
+<h2>
+    {% if result %}
+        <p>Kupuję:  {{ amount }} {{ currency }} i płacę {{ result }} PLN</p>
+    {% endif %}
+</h2>
+</body>
+</html>

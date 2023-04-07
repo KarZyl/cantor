@@ -1,0 +1,62 @@
+h1 {
+background: Silver;
+color: rgb(12, 8, 8);
+border:rgb(196, 130, 130) 15px; 
+border-radius: 20px;
+text-align: center;
+padding: 20px;
+size: 20px;
+}
+
+body {
+  font-family: Georgia, Arial, Helvetica;
+  font-size: normal;
+  background:
+     url(background.png)    /* image */
+     top center / 2000px 1000px /* position / size */
+     no-repeat                /* repeat */
+     fixed                    /* attachment */
+     padding-box              /* origin */
+     content-box              /* clip */
+     rgb(209, 207, 207);                     /* color */
+     background-size: cover;
+    }
+
+title {
+  border: 111px solid rgb(2, 2, 2);
+
+
+
+}
+h2 {
+  color: #061929;
+  background: Silver;
+  text-align: center;
+  border:rgb(196, 130, 130) 15px; 
+  border-radius: 20px;
+  
+}
+a {
+  text-decoration: none; 
+  color: black;
+  text-decoration-line: overline;
+  background: rgb(226, 219, 235);
+  border: solid 2px black;
+}
+a:hover { 
+  text-decoration: underline; 
+}
+
+p, ul {
+  color: rgb(241, 241, 241);
+  padding: 10px;
+  max-width: 1000px;
+  background: rgb(3, 3, 3);
+}
+.form-example {
+  color: rgb(241, 241, 241);
+  max-width: 400px;
+  background: rgb(12, 12, 12);
+
+}
+
